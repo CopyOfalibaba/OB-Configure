@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		#parse('layout/header.vm')
+ 	</head>
+ 	<body>
+	 	<header id="header">
+			<h1 id="logo"><a title="阿里-OceanBase" href="/">阿里-OceanBase</a></h1>
+			<link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+			<link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+			<nav id="mid_nav">
+				<ul>
+				<!-- <li><a href="/" class="#if($home) homepage #end">首页</a>|</li>
+					<li><a href="/monitor/overview" class="#if($monitor) homepage #end jqjk">集群监控</a>|</li>
+					<li><a href="/warning/unsend" class="#if($warning) homepage #end jqjk">警报管理</a>|</li>
+					<li><a href="/configdata/list" class="#if($metadata) homepage #end jqjk">元信息管理</a>|</li>		
+					<li><a href="/app/list" class="#if($appinfo) homepage #end jqjk">业务接入</a>|</li>				
+					<li><a href="/obplus/overview" class="#if($obplus) homepage #end jqjk">OB PLUS</a>|</li>
+					<li><a href="http://oceanbase.alibaba-inc.com/wiki" class="wronglist">文档中心</a>|</li>
+					<li><a href="https://github.com/alibaba/oceanbase" target="_blank" class="download">版本下载</a>|</li>
+					<li><a href="#" class="aboutus">关于我们</a></li> -->
+				</ul>
+				<span class="j"></span> 
+			</nav>
+			<div id="user"> <p>#if($user.cname) 您好！ #end<span id="USER_NAME">$!user.cname</span></p><!-- <span class="more">更多功能<ul></ul></span>--> </div>
+		</header>
+		$screenContent
+		<footer id="footer">
+			#parse('layout/footer.vm')
+		</footer>
+	</body>
+	<script type="text/javascript">
+		$("#mid_nav a.homepage").parent().append("<span></span>");
+	</script>	
+</html>

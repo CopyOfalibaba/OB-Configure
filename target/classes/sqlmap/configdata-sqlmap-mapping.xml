@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="obconfig">
+
+    <resultMap id="OBCONFIG-CONFIGDATA" class="com.alibaba.oceanbase.obconfig.entity.ConfigDataDO">
+    	<result property="dataId" column="data_id" javaType="java.lang.String" jdbcType="VARCHAR"  />
+    	<result property="username" column="username" javaType="java.lang.String" jdbcType="VARCHAR"  />
+    	<result property="password" column="password" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="dataContent" column="data_content" javaType="java.lang.String" jdbcType="VARCHAR"  />
+  		<result property="clusterAddress_03" column="cluster_address_03" javaType="java.lang.String" jdbcType="VARCHAR"  />
+  		<result property="masterCluster" column="master_cluster" javaType="java.lang.String" jdbcType="VARCHAR"  />
+  		<result property="clusterFlowPercent" column="cluster_flow_percent" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="jarPath" column="jar_path" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="whiteList" column="white_list" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="dsConfig" column="ds_config" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="percentage" column="percentage" javaType="int" jdbcType="int"  />
+		<result property="isUpgrade" column="is_process" javaType="int" jdbcType="tinyint"  />
+		<result property="isMonitor" column="is_monitor" javaType="int" jdbcType="tinyint"  />
+		<result property="currentVersion" column="current_version" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="datetime"  />
+		<result property="modifyTime" column="modify_time" javaType="java.util.Date" jdbcType="datetime"  />
+    </resultMap>
+    
+    <sql id="Tconfigdata.columns">
+		data_id, username, password, data_content, jar_path, white_list, percentage, is_process, ds_config, is_monitor, current_version, create_time, modify_time, cluster_address_03, master_cluster, cluster_flow_percent  
+	</sql>
+	
+	<insert id="configdata_insert">
+		INSERT INTO config_data (
+		    data_id, username, password, data_content, jar_path, white_list, percentage, is_process, ds_config, is_monitor, current_version, create_time, modify_time, cluster_address_03, master_cluster, cluster_flow_percent
+	    ) VALUES (
+	        #dataId#, #username#, #password#, #dataContent#, #jarPath#, #whiteList#, #percentage#, #isUpgrade#, #dsConfig#, #isMonitor#, #currentVersion#, #createTime#, #modifyTime#, #clusterAddress_03#, #masterCluster#, #clusterFlowPercent#
+	    ) 
+	    <selectKey resultClass="java.lang.String" type="post" keyProperty="dataId">  
+	   		SELECT LAST_INSERT_ID()  
+  	    </selectKey> 
+	</insert>
+
+	<delete id="configdata_delete">
+	    DELETE FROM config_data WHERE data_id = #dataId#
+	</delete>
+	
+	<update id="configdata_update">
+		UPDATE config_data SET
+			username = #username#, password = #password#, ds_config = #dsConfig#, is_monitor = #isMonitor#, data_content = #dataContent#, jar_path=#jarPath#, white_list=#whiteList#, percentage=#percentage#, is_process=#isUpgrade#, current_version=#currentVersion#, modify_time = #modifyTime#, cluster_address_03 = #clusterAddress_03#, master_cluster = #masterCluster#, cluster_flow_percent = #clusterFlowPercent#
+	    WHERE 
+	      	data_id = #dataId# 
+	</update>
+
+	<select id="configdata_select_byid" resultMap="OBCONFIG-CONFIGDATA">  
+	    SELECT <include refid="Tconfigdata.columns"/> FROM config_data WHERE data_id = #dataId#
+	</select>
+
+	<select id="configdata_select_bycondition" resultMap="OBCONFIG-CONFIGDATA">
+		SELECT  <include refid="Tconfigdata.columns"/> FROM config_data order by create_time asc
+	</select>
+</sqlMap>

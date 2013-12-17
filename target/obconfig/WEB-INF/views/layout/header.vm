@@ -1,0 +1,12 @@
+<meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+<title>OceanBase-Ali 首页</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link type="text/css" rel="stylesheet" href="/css/style.css">
+<link type="text/css" rel="stylesheet" href="/css/index.css">
+<link type="text/css" rel="stylesheet" href="/css/table.css">
+<link type="text/css" rel="stylesheet" href="/css/ng-grid.css">
+<link href="/css/WdatePicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.js?v=2.1.4"></script>
+<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css" media="screen" />
+#if($obplus)<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" />#end

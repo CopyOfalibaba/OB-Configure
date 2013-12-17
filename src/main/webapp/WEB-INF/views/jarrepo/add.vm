@@ -1,0 +1,37 @@
+#set($metadata="metadata")
+
+<section id="main">
+	<aside id="leftarea">
+		<div class="tabnav">
+			<ul>
+				<li><a href="/configdata/list">集群配置</a></li>
+				<li class="tabnav_li_current"><a href="/jarrepo/list">jar管理</a></li>
+				<li><a href="/configdata/encodepass">密码生成</a></li>
+			</ul>
+		</div>
+	</aside>
+	<aside id="rightarea">
+		<div style="min-height:10px;height:auto;margin:10px">
+			<a href="/jarrepo/list">JAR管理</a> >> 新增JAR
+		</div>
+		<div style="min-height:500px; height:auto;">
+			<form action="/jarrepo/add" method="post" enctype="multipart/form-data">
+				<table id="hor-minimalist-b">
+    				<tr>
+    					<td width="10%;">version</td>
+        				<td><input type="text" name="version" size="30" value="$!jarDO.version" /></td>
+        			</tr>
+        			<tr>
+        				<td>JAR</td>
+        				<td><input type="file" name="jarFile" size="30"></td>
+        			</tr>
+        			<tr>
+        				<td><input type="submit" value="submit" /></td>
+        				<td><input name="id" type="hidden" value="$!jarDO.id" /></td>
+        			</tr>
+			  	</table>
+			</form>
+		</div>
+	</aside>
+</section>
+
