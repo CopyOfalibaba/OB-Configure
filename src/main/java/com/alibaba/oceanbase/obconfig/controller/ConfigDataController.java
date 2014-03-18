@@ -124,7 +124,7 @@ public class ConfigDataController {
             configDataHistoryDO.setIsUpgrade(configDataDO.getIsUpgrade());
             configDataHistoryDO.setJarPath(configDataDO.getJarPath());
             configDataHistoryDO.setOperate(Constants.OPERATE_DELETE);
-            configDataHistoryDO.setOperator(user.getCname());
+           // configDataHistoryDO.setOperator(user.getCname());
             configDataHistoryDO.setPercentage(configDataDO.getPercentage());
             configDataHistoryDO.setVersion(configDataDO.getCurrentVersion());
             configDataHistoryDO.setWhiteList(configDataDO.getWhiteList());
@@ -293,7 +293,7 @@ public class ConfigDataController {
             configDataHistoryDO.setCreateTime(new Date());
             configDataHistoryDO.setIsUpgrade(isUpgrade);
             configDataHistoryDO.setJarPath(jarPath);
-            configDataHistoryDO.setOperator(user.getCname());
+           // configDataHistoryDO.setOperator(user.getCname());
             configDataHistoryDO.setPercentage(percentage);
             configDataHistoryDO.setVersion(currentVersion);
             configDataHistoryDO.setWhiteList(whiteList);
